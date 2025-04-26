@@ -1,0 +1,9 @@
+const express = require('express');
+const router = express.Router();
+const leaderboardController = require('../controllers/leaderboardController');
+
+router.get('/', leaderboardController.getLeaderboard);
+router.get('/search/:id', leaderboardController.searchUser);
+router.post('/recalculate', leaderboardController.recalculate);
+
+module.exports = router;
